@@ -23,7 +23,7 @@ Full text search does not supported
 ## Filter Of Object List
 `[{...}, {...}, {...} ...]`
 
-`$filter('orFilter')(scope.collections.friends, {arg1, arg2, ...}, false)`
+`$filter('orFilter')([{..}, {..} ...], {arg1, arg2, ...}, false)`
 
 ```html
 <label for="name">Get Name</label>
