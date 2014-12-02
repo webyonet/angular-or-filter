@@ -1,7 +1,6 @@
 Angular Or Filter
 ========
-Full text search does not supported
-
+Full text search are not supported
 
 ## Usage
 ## In HTML Template Binding
@@ -13,10 +12,11 @@ Full text search does not supported
 `$filter('orFilter')(array, expression, comparator)`
 
 ## Arguments
+
 | Param | Type | Details
 |-------|------------|--------------------|
-|array | `Array` | The source array. |
-|expression | `string` `Object` `function` `number` `boolean` | The predicate to be used for selecting items from array.|
+|array | `array` | The source array. |
+|expression | `string` `object` `function` `number` `boolean` | The predicate to be used for selecting items from array.|
 | comparator | `boolean` | Comparator which is used in determining if the expected value (from the filter expression) and actual value (from the object in the array) should be considered a match. |
 
 
@@ -81,11 +81,11 @@ Full text search does not supported
 ```html
 <script>
     var list = [1, 2, 3, 4, 5, "5", "4", "3"];
-    $scope.filteredList = filter('orFilter')(scope.collections.friends, [1, 3, 4], false);
+    $filter('orFilter')(list, [1, 3, 4], false);
     // return [1, 3, 4 "4", "3"]
-    $scope.filteredList = filter('orFilter')(scope.collections.friends, [1, 3, 4], true);
+    $filter('orFilter')(list, [1, 3, 4], true);
     // return [1, 3, 4]
-    $scope.filteredList = filter('orFilter')(scope.collections.friends, 1, true);
+    $filter('orFilter')(list, 1, true);
     // return [1]
 </script>
 ```
@@ -120,9 +120,9 @@ Full text search does not supported
 ```html
 <script>
     var list = ["Craig", "Trisha", "Adeline", "Elvia", "Knight"];
-    $scope.filteredList = filter('orFilter')(scope.collections.friends, ["Craig", "Trisha"]);
+    $filter('orFilter')(list, ["Craig", "Trisha"]);
     // return ["Craig", "Trisha"]
-    $scope.filteredList = filter('orFilter')(scope.collections.friends, "Craig");
+    $filter('orFilter')(list, "Craig");
     // return ["Craig"]
 </script>
 ```
