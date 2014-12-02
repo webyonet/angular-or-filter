@@ -4,18 +4,21 @@ Full text search does not supported
 
 ## Filter Of Object List
 `[{...}, {...}, {...} ...]`
+
 `$filter('orFilter')(scope.collections.friends, {arg1, arg2, ...}, false)`
+
 ```html
-    <label for="name">Get Name</label>
-    <select id="name" ng-options="item.name for item in collections.friends" ng-model="selectedItem" ng-change="filtered()"></select>
-    <input id="male" type="checkbox" ng-model="male" ng-change="filtered()" />
-    <label for="male">Or Get Male</label>
-    <ul>
+<label for="name">Get Name</label>
+<select id="name" ng-options="item.name for item in collections.friends" 
+        ng-model="selectedItem" ng-change="filtered()"></select>
+<input id="male" type="checkbox" ng-model="male" ng-change="filtered()" />
+<label for="male">Or Get Male</label>
+<ul>
     <li ng-repeat="item in filteredList">
         {{ item.name }} - {{ (item.gender ? 'Male' : 'Female') }}
     </li>
 </ul>
-    <script>
+<script>
 ; (function (app) {
     app.controller("someCtrl", [
         "$scope", "$filter", function (scope, filter) {
@@ -54,69 +57,81 @@ Full text search does not supported
 })(angular.module('app', ['or-filter']));
 </script>
 ```
+
 ## Filter of Number in Javascript
 
 ```html
 <script>
-var list = [1, 2, 3, 4, 5, "5", "4", "3"];
-$scope.filteredList = filter('orFilter')(scope.collections.friends, [1, 3, 4], false); // return [1, 3, 4 "4", "3"]
-$scope.filteredList = filter('orFilter')(scope.collections.friends, [1, 3, 4], true); // return [1, 3, 4]
-$scope.filteredList = filter('orFilter')(scope.collections.friends, 1, true); // return [1]
+    var list = [1, 2, 3, 4, 5, "5", "4", "3"];
+    $scope.filteredList = filter('orFilter')(scope.collections.friends, [1, 3, 4], false);
+    // return [1, 3, 4 "4", "3"]
+    $scope.filteredList = filter('orFilter')(scope.collections.friends, [1, 3, 4], true);
+    // return [1, 3, 4]
+    $scope.filteredList = filter('orFilter')(scope.collections.friends, 1, true);
+    // return [1]
 </script>
 ```
 
 ## Filter of Number in HTML
+
 ```html
-    <ul>
+<ul>
     <li ng-repeat="item in [1, 2, 3, 4, 5, '5', '4', '3'] | orFilter: 5"> {{ item }} </li>
     <!--
         Result:
         <li>5</li>
         <li>5</li>
-        -->
+    -->
     <li ng-repeat="item in [1, 2, 3, 4, 5, '5', '4', '3'] | orFilter: 5: true"> {{ item }} </li>
     <!--
         Result:
         <li>5</li>
-        -->
+    -->
     <li ng-repeat="item in [1, 2, 3, 4, 5, '5', '4', '3'] | orFilter: [1, 4]"> {{ item }} </li>
     <!--
         Result:
         <li>1</li>
         <li>4</li>
         <li>4</li>
-        -->
+    -->
 </ul>
 ```
+
 ## Filter of String in Javascript
+
+```html
 <script>
-var list = ["Craig", "Trisha", "Adeline", "Elvia", "Knight"];
-$scope.filteredList = filter('orFilter')(scope.collections.friends, ["Craig", "Trisha"]); // return ["Craig", "Trisha"]
-$scope.filteredList = filter('orFilter')(scope.collections.friends, "Craig"); // return ["Craig"]
+    var list = ["Craig", "Trisha", "Adeline", "Elvia", "Knight"];
+    $scope.filteredList = filter('orFilter')(scope.collections.friends, ["Craig", "Trisha"]);
+    // return ["Craig", "Trisha"]
+    $scope.filteredList = filter('orFilter')(scope.collections.friends, "Craig");
+    // return ["Craig"]
 </script>
 ```
+
 ## Filter of String in HTML
 
 ```html     
 <ul>
-<li ng-repeat="item in ['Craig', 'Trisha', 'Adeline', 'Elvia', 'Knight'] | orFilter: 'Craig'"> {{ item }} </li>
-<!--
-    Result:
-    <li>Craig</li>
+    <li ng-repeat="item in ['Craig', 'Trisha', 'Adeline', 'Elvia', 'Knight'] | orFilter: 'Craig'"> {{ item }} </li>
+    <!--
+        Result:
+        <li>Craig</li>
     -->
-<li ng-repeat="item in ['Craig', 'Trisha', 'Adeline', 'Elvia', 'Knight'] | orFilter: 'craig': true"> {{ item }} </li>
-<!--
-    Result:
-    -- empty --
+    <li ng-repeat="item in ['Craig', 'Trisha', 'Adeline', 'Elvia', 'Knight'] | orFilter: 'craig': true"> {{ item }} </li>
+    <!--
+        Result:
+        -- empty --
     -->
-<li ng-repeat="item in ['Craig', 'Trisha', 'Adeline', 'Elvia', 'Knight'] | orFilter: ['Craig', 'Elvia']"> {{ item }} </li>
-<!--
-    Result:
-    <li>Craig</li>
-    <li>Elvia</li>
+    <li ng-repeat="item in ['Craig', 'Trisha', 'Adeline', 'Elvia', 'Knight'] | orFilter: ['Craig', 'Elvia']"> {{ item }} </li>
+    <!--
+        Result:
+        <li>Craig</li>
+        <li>Elvia</li>
     -->
 </ul>
 ```
+
 ## LICENSE - "MIT License"
 
 Copyright (c) 2014 webyonet
