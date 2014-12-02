@@ -1,7 +1,7 @@
-/*
+﻿/*
  * @name: Angularjs Or Filter
  * @type: Filter
- * @version: v1.3.2
+ * @version: v1.3.4
  * @author: Burak Demirezen
  * @License: Licensed under the MIT license.
  */
