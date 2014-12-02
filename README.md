@@ -6,7 +6,7 @@ Full text search does not supported
 ## Usage
 ## In HTML Template Binding
 
-`{{ filter_expression | filter : expression : comparator}}`
+`{{ filter_expression | orFilter : expression : comparator}}`
 
 ## In JavaScript
 
