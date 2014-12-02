@@ -1,20 +1,21 @@
-<h1>Angular Or Filter</h1>
+  <h1>Angular Or Filter</h1>
     <article>
         Full text search does not supported
     </article>
     <h2>Demo</h2>
     <h2>Filter Of Object List</h2>
     <code>[{...}, {...}, {...} ...]</code>
-    <pre>
+    <code>$filter('orFilter')(scope.collections.friends, {arg1, arg2, ...}, false)</code>
+    <pre class="highlight highlight-html">
     <label for="name">Get Name</label>
     <select id="name" ng-options="item.name for item in collections.friends" ng-model="selectedItem" ng-change="filtered()"></select>
     <input id="male" type="checkbox" ng-model="male" ng-change="filtered()" />
     <label for="male">Or Get Male</label>
     <ul>
     <li ng-repeat="item in filteredList">
-                {{ item.name }} - {{ (item.gender ? 'Male' : 'Female') }}
-            </li>
-        </ul>
+            {{ item.name }} - {{ (item.gender ? 'Male' : 'Female') }}
+        </li>
+    </ul>
     <script>
     ; (function (app) {
         app.controller("someCtrl", [
@@ -52,10 +53,10 @@
             }
         ]);
     })(angular.module('app', ['or-filter']));
-        </script>
-</pre>
+    </script>
+    </pre>
     <h2>Filter of Number in Javascript</h2>
-    <pre>
+    <pre class="highlight highlight-html">
     <script>
     var list = [1, 2, 3, 4, 5, "5", "4", "3"];
     $scope.filteredList = filter('orFilter')(scope.collections.friends, [1, 3, 4], false); // return [1, 3, 4 "4", "3"]
@@ -65,7 +66,7 @@
     </pre>
 
     <h2>Filter of Number in HTML</h2>
-    <pre>
+    <pre class="highlight highlight-html">
     <ul>
     <li ng-repeat="item in [1, 2, 3, 4, 5, '5', '4', '3'] | orFilter: 5"> {{ item }} </li>
         <!--
@@ -88,7 +89,7 @@
     </ul>
     </pre>
     <h2>Filter of String in Javascript</h2>
-    <pre>
+    <pre class="highlight highlight-html">
     <script>
     var list = ["Craig", "Trisha", "Adeline", "Elvia", "Knight"];
     $scope.filteredList = filter('orFilter')(scope.collections.friends, ["Craig", "Trisha"]); // return ["Craig", "Trisha"]
@@ -97,7 +98,7 @@
     </pre>
 
     <h2>Filter of String in HTML</h2>
-    <pre>
+    <pre class="highlight highlight-html">
     <ul>
     <li ng-repeat="item in ['Craig', 'Trisha', 'Adeline', 'Elvia', 'Knight'] | orFilter: 'Craig'"> {{ item }} </li>
         <!--
@@ -116,5 +117,4 @@
             <li>Elvia</li>
             -->
     </ul>
-    </pre>
-
+</pre>
