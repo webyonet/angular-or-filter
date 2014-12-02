@@ -2,6 +2,24 @@ Angular Or Filter
 ========
 Full text search does not supported
 
+
+## Usage
+## In HTML Template Binding
+
+`{{ filter_expression | filter : expression : comparator}}`
+
+## In JavaScript
+
+`$filter('orFilter')(array, expression, comparator)`
+
+## Arguments
+| Param | Type | Details
+|-------|------------|--------------------|
+|array | `Array` | The source array. |
+|expression | `string` `Object` `function` `number` `boolean` | The predicate to be used for selecting items from array.|
+| comparator | `boolean` | Comparator which is used in determining if the expected value (from the filter expression) and actual value (from the object in the array) should be considered a match. |
+
+
 ## Filter Of Object List
 `[{...}, {...}, {...} ...]`
 
