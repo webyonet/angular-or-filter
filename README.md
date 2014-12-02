@@ -16,7 +16,7 @@ Full text search are not supported
 | Param | Type | Details
 |-------|------------|--------------------|
 |array | `array` | The source array. |
-|expression | `string` `object` `function` `number` `boolean` | The predicate to be used for selecting items from array.|
+|expression | `string` `object` `function` `number` `boolean` `array` | The predicate to be used for selecting items from array.|
 | comparator | `boolean` | Comparator which is used in determining if the expected value (from the filter expression) and actual value (from the object in the array) should be considered a match. |
 
 
