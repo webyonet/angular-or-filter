@@ -41,7 +41,6 @@
                 comparator = comparator || false;
 
                 if (isEmpty(expression)) {
-                    console.log(expression);
                     returnList = array;
                 } else {
                     for (var ary in array) {
