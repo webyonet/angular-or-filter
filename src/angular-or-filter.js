@@ -1,7 +1,7 @@
 ﻿/*
  * @name: Angularjs Or Filter
  * @type: Filter
- * @version: v1.3.4
+ * @version: v1.3.5
  * @author: Burak Demirezen
  * @License: Licensed under the MIT license.
  */
@@ -48,7 +48,6 @@
                             for (var key in keys) {
                                 if (equals(array[ary][keys[key]], expression[keys[key]], comparator)) {
                                     returnList.push(array[ary]);
-                                    break;
                                 }
                             }
                         } else if (keyIsArray) {
