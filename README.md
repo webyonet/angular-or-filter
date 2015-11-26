@@ -1,6 +1,6 @@
 Angular Or Filter
 ========
-Full text search are not supported
+Full text search supported
 
 ## Usage
 ## In HTML Template Binding
